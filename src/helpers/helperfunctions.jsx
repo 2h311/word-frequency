@@ -7,7 +7,7 @@ const getRandomNumber = (min, max) => {
 const getSampleWordsFromHipsum = async (
   randomNumber = getRandomNumber(1, 10)
 ) => {
-  const hipsumEndpoint = `http://hipsum.co/api/?type=hipster-centric&sentences=${randomNumber}`;
+  const hipsumEndpoint = `https://hipsum.co/api/?type=hipster-centric&sentences=${randomNumber}`;
   const response = await fetch(hipsumEndpoint);
   let sampleWordFromHipsum;
   if (response.ok === true && response.status === 200) {
