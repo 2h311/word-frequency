@@ -7,6 +7,8 @@
 :root {
   --dark-color: #334155;
   --light-color: #f8fafc;
+  --box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 0px 8px;
 }
 
 body {
@@ -33,11 +35,12 @@ body {
 .container__upper-region {
   border: 1px solid #fff;
   background-color: #fff;
-  padding: 0.75rem 0.85rem;
+  padding: 2.65rem 1rem;
 
   display: flex;
   flex-direction: column;
-  gap: 0.92rem;
+  gap: 1.2rem;
+  box-shadow: var(--box-shadow);
 }
 
 .container__textarea {
@@ -59,9 +62,9 @@ body {
 
 .container__button {
   font-size: 1.2rem;
-  font-weight: 500;
+  font-weight: 600;
   border: none;
-  padding: 1.2rem 1.65rem;
+  padding: 0.85rem 1.85rem;
   border-radius: 6px;
   text-transform: capitalize;
 }
