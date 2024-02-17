@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-
 import {
   getSampleWordsFromHipsum,
   getWordsByFrequency,
@@ -17,9 +16,10 @@ const App = () => {
       setWordInTextarea(emptyMessage);
       return;
     }
-    console.log("counting all the word you have in|", wordInTextarea);
+    // console.log("counting all the word you have in|", wordInTextarea);
     const wordsAndFrequency = getWordsByFrequency(wordInTextarea);
     setFrequencyData(wordsAndFrequency);
+    console.log(wordsAndFrequency);
   };
 
   const loadSample = () => {
