@@ -1,10 +1,12 @@
-const getRandomIntInclusive = (min, max) => {
+const getRandomNumber = (min, max) => {
   const minCeiled = Math.ceil(min);
   const maxFloored = Math.floor(max);
   return Math.floor(Math.random() * (maxFloored - minCeiled + 1) + minCeiled); // The maximum is inclusive and the minimum is inclusive
 };
 
-const getSampleWords = async (randomNumber = getRandomIntInclusive(1, 10)) => {
+const getSampleWordsFromHipsum = async (
+  randomNumber = getRandomNumber(1, 10)
+) => {
   const hipsumEndpoint = `http://hipsum.co/api/?type=hipster-centric&sentences=${randomNumber}`;
   const response = await fetch(hipsumEndpoint);
   let sampleWordFromHipsum;
@@ -45,4 +47,4 @@ const getWordsByFrequency = (text) => {
       .sort((a, b) => b.frequency - a.frequency)
   );
 };
-export { getRandomIntInclusive, getSampleWords, getWordsByFrequency };
+export { getSampleWordsFromHipsum, getWordsByFrequency };

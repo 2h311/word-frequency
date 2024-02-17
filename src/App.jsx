@@ -1,40 +1,40 @@
-import React, { useEffect, useState } from "react";
-import { getSampleWords, getWordsByFrequency } from "./helpers/helperfunctions";
+import React, { useState } from "react";
+import {
+  getSampleWordsFromHipsum,
+  getWordsByFrequency,
+} from "./helpers/helperfunctions";
+
+const loadingMessage = "Loading sample text ... Please wait for it 😊",
+  emptyMessage =
+    "Empty textarea\nIf you press the count button, you should see the absolute frequency of these words in a table and pie chart. If you press the load button instead, you should see the first paragraph from an episode of the freeCodeCamp podcast. Or this message. Consider it a default. This message.";
 
 const App = () => {
-  const [wordsToCount, setWordsToCount] = useState("");
-  const [showLoadingText] = useState(
-    "Loading sample text ... Please wait for it 😊"
-  );
+  const [wordInTextarea, setWordInTextarea] = useState("");
 
   const countWords = () => {
-    if (wordsToCount) {
-      const wordMap = getWordsByFrequency(wordsToCount);
-      console.log(wordMap);
+    if (!wordInTextarea) {
+      setWordInTextarea(emptyMessage);
+    } else {
+      console.log("counting all the word you have in|", wordInTextarea);
     }
   };
 
-  const loadSampleWords = async () => {
-    setWordsToCount(showLoadingText); // use this to show some loading text
-    const sampleWord = await getSampleWords();
-    setWordsToCount(sampleWord);
-  };
-
-  const getWordsFromTextField = (text) => {
-    setWordsToCount(text);
+  const loadSample = () => {
+    setWordInTextarea(loadingMessage);
+    getSampleWordsFromHipsum().then(setWordInTextarea).catch(console.error);
   };
 
   return (
     <div>
       <textarea
-        name="textarea"
-        cols="100"
+        name="word"
+        value={wordInTextarea}
+        cols="120"
         rows="10"
-        value={wordsToCount}
-        onChange={(event) => getWordsFromTextField(event.target.value)}
+        onChange={(event) => setWordInTextarea(event.target.value)}
       ></textarea>
-      <input type="button" value="Count words" onClick={countWords} />
-      <input type="button" value="Load sample" onClick={loadSampleWords} />
+      <input type="button" value="count words" onClick={() => countWords()} />
+      <input type="button" value="load sample" onClick={() => loadSample()} />
     </div>
   );
 };
