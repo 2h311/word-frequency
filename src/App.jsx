@@ -1,19 +1,25 @@
 import React, { useState } from "react";
+
 import {
   getSampleWordsFromHipsum,
   getWordsByFrequency,
 } from "./helpers/helperfunctions";
 import { loadingMessage, emptyMessage } from "./helpers/helpermessages";
 
+import WordFrequencyTable from "./components/WordFrequencyTable";
+
 const App = () => {
   const [wordInTextarea, setWordInTextarea] = useState("");
+  const [frequencyData, setFrequencyData] = useState([]);
 
   const countWords = () => {
     if (!wordInTextarea) {
       setWordInTextarea(emptyMessage);
-    } else {
-      console.log("counting all the word you have in|", wordInTextarea);
+      return;
     }
+    console.log("counting all the word you have in|", wordInTextarea);
+    const wordsAndFrequency = getWordsByFrequency(wordInTextarea);
+    setFrequencyData(wordsAndFrequency);
   };
 
   const loadSample = () => {
@@ -32,6 +38,7 @@ const App = () => {
       ></textarea>
       <input type="button" value="count words" onClick={() => countWords()} />
       <input type="button" value="load sample" onClick={() => loadSample()} />
+      <WordFrequencyTable frequencyData={frequencyData} />
     </div>
   );
 };
