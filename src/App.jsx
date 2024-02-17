@@ -28,16 +28,30 @@ const App = () => {
   };
 
   return (
-    <div>
-      <textarea
-        name="word"
-        value={wordInTextarea}
-        cols="120"
-        rows="10"
-        onChange={(event) => setWordInTextarea(event.target.value)}
-      ></textarea>
-      <input type="button" value="count words" onClick={() => countWords()} />
-      <input type="button" value="load sample" onClick={() => loadSample()} />
+    <div className="container">
+      <div className="container__upper-region">
+        <textarea
+          className="container__textarea"
+          name="word"
+          value={wordInTextarea}
+          onChange={(event) => setWordInTextarea(event.target.value)}
+        ></textarea>
+        <div className="container__buttons">
+          <input
+            className="container__button container__button--count-words"
+            type="button"
+            value="count words"
+            onClick={() => countWords()}
+          />
+          <input
+            className="container__button container__button--load-sample"
+            type="button"
+            value="load sample"
+            onClick={() => loadSample()}
+          />
+        </div>
+      </div>
+
       <WordFrequencyTable frequencyData={frequencyData} />
     </div>
   );
