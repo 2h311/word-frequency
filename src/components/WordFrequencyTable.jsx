@@ -2,7 +2,9 @@ import React from "react";
 
 import DataTable from "./DataTable";
 import { NoteBookSVG, ChartSVG } from "./Icons";
-import "../Table.css";
+
+import "../assets/Table.css";
+import "../assets/Loader.css";
 
 const WordFrequencyTable = ({ frequencyData }) => {
   if (frequencyData.length) {
@@ -19,6 +21,10 @@ const WordFrequencyTable = ({ frequencyData }) => {
             <span className="container__chart">
               <ChartSVG />
             </span>
+            <div className="lds-ripple">
+              <div></div>
+              <div></div>
+            </div>
           </div>
         </div>
       </div>

@@ -1,0 +1,117 @@
+.container {
+  max-width: max-content;
+  /* border: 1px solid #333; */
+  margin: 3rem 0;
+  font-size: 1.45rem;
+}
+
+.container__upper-region {
+  /* border: 1px solid #333; */
+
+  background-color: #fff;
+  padding: 2.65rem 1rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  box-shadow: var(--box-shadow);
+  position: relative;
+}
+
+.container__textarea {
+  resize: none;
+  width: 52rem;
+  height: 20rem;
+  border: 2.5px solid var(--dark-color);
+  padding: 1.25rem;
+  font-size: 1.2rem;
+  line-height: 2rem;
+  border-radius: 6px;
+  text-align: justify;
+}
+
+.container__buttons {
+  display: flex;
+  column-gap: 1rem;
+}
+
+.container__button {
+  font-size: 1.2rem;
+  font-weight: 600;
+  border: none;
+  padding: 0.85rem 1.85rem;
+  border-radius: 6px;
+  text-transform: capitalize;
+}
+
+.container__button:hover {
+  cursor: pointer;
+}
+
+.container__button--count-words {
+  background-color: var(--dark-color);
+  color: var(--light-color);
+  border: 2.3px solid transparent;
+}
+
+.container__button--load-sample {
+  background-color: var(--light-color);
+  color: var(--dark-color);
+  border: 2.3px solid var(--dark-color);
+}
+
+.container__keyboard {
+  display: block;
+  position: absolute;
+  top: 1.85rem;
+  right: 2.5rem;
+  transform: scale(7.25) rotateZ(-150deg);
+}
+
+.container__notebook {
+  position: absolute;
+  left: 1.95rem;
+  top: 1.65rem;
+  transform: scale(5) rotateZ(150deg);
+}
+
+.container__down-region {
+  padding: 2.65rem 0;
+  gap: 1.2rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.container__down-left,
+.container__down-right {
+  box-shadow: var(--box-shadow);
+}
+
+.container__down-left {
+  width: 60%;
+  background-color: #fff;
+  position: relative;
+}
+
+.container__down-right {
+  width: 40%;
+  height: 22rem;
+  background-color: #fff;
+}
+
+.container__down-block {
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container__chart {
+  position: absolute;
+  bottom: 0.65rem;
+  right: 1.05rem;
+  transform: scale(5) rotateZ(-155deg);
+}

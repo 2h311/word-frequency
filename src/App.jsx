@@ -9,6 +9,8 @@ import { loadingMessage, emptyMessage } from "./helpers/helpermessages";
 
 import { KeyboardSVG } from "./components/Icons";
 
+import "./App.css";
+
 const App = () => {
   const [wordInTextarea, setWordInTextarea] = useState("");
   const [frequencyData, setFrequencyData] = useState([]);
