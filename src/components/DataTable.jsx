@@ -5,7 +5,7 @@ import TableHead from "./TableHead";
 
 const DataTable = ({ tableData }) => {
   return (
-    <table>
+    <table className="table">
       <TableHead />
       <TableBody tableData={tableData} />
     </table>

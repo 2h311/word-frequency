@@ -7,6 +7,7 @@
 :root {
   --dark-color: #334155;
   --light-color: #f8fafc;
+  --light-color-2: #e4e4e7;
   --box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
     rgba(17, 17, 26, 0.1) 0px 0px 8px;
 }
@@ -93,12 +94,17 @@ body {
   top: 1.85rem;
   right: 2.5rem;
   transform: scale(7.25) rotateZ(-150deg);
-  fill: var(--dark-color);
+}
+
+.container__notebook {
+  position: absolute;
+  left: 1.95rem;
+  top: 1.65rem;
+  transform: scale(5) rotateZ(150deg);
 }
 
 .container__down-region {
-  padding: 2.65rem 1rem;
-  border: 1px solid #334155;
+  padding: 2.65rem 0;
   gap: 1.2rem;
   display: flex;
   align-items: flex-start;
@@ -106,15 +112,30 @@ body {
 
 .container__down-left,
 .container__down-right {
-  border: 1px solid #334155;
+  box-shadow: var(--box-shadow);
 }
 
 .container__down-left {
   width: 60%;
+  background-color: #fff;
+  position: relative;
 }
 
 .container__down-right {
   width: 40%;
   height: 22rem;
-  background-color: var(--dark-color);
+  background-color: #fff;
+}
+
+.container__down-block {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.container__chart {
+  position: absolute;
+  bottom: 0.65rem;
+  right: 1.05rem;
+  transform: scale(5) rotateZ(-155deg);
 }
