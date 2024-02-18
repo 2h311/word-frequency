@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+
+import WordFrequencyTable from "./components/WordFrequencyTable";
 import {
   getSampleWordsFromHipsum,
   getWordsByFrequency,
 } from "./helpers/helperfunctions";
 import { loadingMessage, emptyMessage } from "./helpers/helpermessages";
 
-import WordFrequencyTable from "./components/WordFrequencyTable";
+import { KeyboardSVG } from "./components/Icons";
 
 const App = () => {
   const [wordInTextarea, setWordInTextarea] = useState("");
@@ -30,6 +32,9 @@ const App = () => {
   return (
     <div className="container">
       <div className="container__upper-region">
+        <span className="container__keyboard">
+          <KeyboardSVG className="container__svg" />
+        </span>
         <textarea
           className="container__textarea"
           name="word"
@@ -52,7 +57,9 @@ const App = () => {
         </div>
       </div>
 
-      <WordFrequencyTable frequencyData={frequencyData} />
+      <>
+        <WordFrequencyTable frequencyData={frequencyData} />
+      </>
     </div>
   );
 };

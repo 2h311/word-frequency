@@ -28,12 +28,13 @@ body {
 .container {
   max-width: max-content;
   /* border: 1px solid #333; */
-  margin-top: 3rem;
+  margin: 3rem 0;
   font-size: 1.45rem;
 }
 
 .container__upper-region {
-  border: 1px solid #fff;
+  /* border: 1px solid #333; */
+
   background-color: #fff;
   padding: 2.65rem 1rem;
 
@@ -41,6 +42,7 @@ body {
   flex-direction: column;
   gap: 1.2rem;
   box-shadow: var(--box-shadow);
+  position: relative;
 }
 
 .container__textarea {
@@ -50,7 +52,7 @@ body {
   border: 2.5px solid var(--dark-color);
   padding: 1.25rem;
   font-size: 1.2rem;
-  line-height: 2.25rem;
+  line-height: 2rem;
   border-radius: 6px;
   text-align: justify;
 }
@@ -83,4 +85,36 @@ body {
   background-color: var(--light-color);
   color: var(--dark-color);
   border: 2.3px solid var(--dark-color);
+}
+
+.container__keyboard {
+  display: block;
+  position: absolute;
+  top: 1.85rem;
+  right: 2.5rem;
+  transform: scale(7.25) rotateZ(-150deg);
+  fill: var(--dark-color);
+}
+
+.container__down-region {
+  padding: 2.65rem 1rem;
+  border: 1px solid #334155;
+  gap: 1.2rem;
+  display: flex;
+  align-items: flex-start;
+}
+
+.container__down-left,
+.container__down-right {
+  border: 1px solid #334155;
+}
+
+.container__down-left {
+  width: 60%;
+}
+
+.container__down-right {
+  width: 40%;
+  height: 22rem;
+  background-color: var(--dark-color);
 }
