@@ -1,10 +1,1 @@
-Word Frequency Checker
-https://word-frequency-phi.vercel.app/
-
-# TODO: Build a pie chart to show the distribution of the word frequencies: https://www.chartjs.org/docs/latest/
-
-# TODO: Make the webapp responsive
-
-# TODO: animate the table rows
-
-# TODO: should there be an error when fetching sample data from hipsum, send some message about the error to the state 
+[Word Frequency](https://word-frequency-phi.vercel.app/) is a tool for analyzing word frequency within a given text. Users can input text, and the application would process it to identify and display the frequency of each word. This tool is useful for text analysis, helping users to see patterns, common themes, or important keywords within a body of text.
